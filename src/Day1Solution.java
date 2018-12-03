@@ -6,17 +6,18 @@ public class Day1Solution {
         File file = new File("src/day1.txt");
 
         boolean isAddition = false, isDuplicated = false, hasVal = false;
-        int num = 0, sum = 0, j = 0, dupVal = 0;
+        int num = 0, sum = 0, j = 0, dupVal = 0, lines = 0;
         String str = "";
         try {
             Scanner scan = new Scanner(file);
             while (scan.hasNextLine()) {
                 str += (scan.nextLine() + " ");
+                lines++;
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        int [] sumArr = new int[str.length() * 50];
+        int [] sumArr = new int[lines * 143]; //array size determined after solution was found
 
         while(!isDuplicated) {
             for (int i = 0; i < str.length(); i++) {
@@ -47,10 +48,10 @@ public class Day1Solution {
                     num = (10 * num) + (str.charAt(i) - 48);
                 }
             }
-            System.out.println("attempt " + j / 959);
+            System.out.println("attempt " + j / lines);
             System.out.println("running total = " + sumArr[j-1]);
         }
         System.out.println();
-        System.out.println("sum: " + sumArr[958] + "\nduplicate: " + dupVal);
+        System.out.println("sum: " + sumArr[lines - 1] + "\nduplicate: " + dupVal);
     }
 }
