@@ -38,7 +38,7 @@ public class Day6Solution {
                     if ((Math.abs(j - yPos[i]) + Math.abs(k - xPos[i])) < Integer.parseInt(grid[j][k].split(" ")[1])){
                         grid[j][k] = (char)(i + 65) + " " + df.format(Math.abs(j - yPos[i]) + Math.abs(k - xPos[i]));
                     } else if ((Math.abs(j - yPos[i]) + Math.abs(k - xPos[i])) == Integer.parseInt(grid[j][k].split(" ")[1])){
-                        grid[j][k] = "* " + Integer.parseInt(grid[j][k].split(" ")[1]);
+                        grid[j][k] = "* " + df.format(Integer.parseInt(grid[j][k].split(" ")[1]));
                     }
                     grid2[j][k] += (Math.abs(j - yPos[i]) + Math.abs(k - xPos[i]));
                 }
