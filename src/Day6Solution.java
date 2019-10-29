@@ -4,11 +4,11 @@ import java.util.Scanner;
 import java.text.DecimalFormat;
 public class Day6Solution {
     public static void main(String[] args) {
-        File file = new File("src/day6.txt");
+        File file1 = new File("src/day6.txt");
         String str = "";
         int lines = 0;
         try {
-            Scanner scan = new Scanner(file);
+            Scanner scan = new Scanner(file1);
             while (scan.hasNextLine()) {
                 str += (scan.nextLine() + ", ");
                 lines++;
